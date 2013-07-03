@@ -199,14 +199,9 @@
 		71C305821783CFAB001A09AF /* YYWS */ = {
 			isa = PBXGroup;
 			children = (
+				71CF98E717840DD600D266A6 /* Main */,
 				71CF988A1783F52500D266A6 /* Utils */,
 				71C305A21783E9BA001A09AF /* Images */,
-				71C3058B1783CFAB001A09AF /* AppDelegate.h */,
-				71C3058C1783CFAB001A09AF /* AppDelegate.m */,
-				71C305941783CFAB001A09AF /* ViewController.h */,
-				71C305951783CFAB001A09AF /* ViewController.m */,
-				71C305971783CFAB001A09AF /* ViewController_iPhone.xib */,
-				71C3059A1783CFAB001A09AF /* ViewController_iPad.xib */,
 				71C305831783CFAB001A09AF /* Supporting Files */,
 			);
 			path = YYWS;
@@ -365,6 +360,19 @@
 				71CF98D51783F62000D266A6 /* MBProgressHUD.m */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		71CF98E717840DD600D266A6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				71C3058B1783CFAB001A09AF /* AppDelegate.h */,
+				71C3058C1783CFAB001A09AF /* AppDelegate.m */,
+				71C305941783CFAB001A09AF /* ViewController.h */,
+				71C305951783CFAB001A09AF /* ViewController.m */,
+				71C305971783CFAB001A09AF /* ViewController_iPhone.xib */,
+				71C3059A1783CFAB001A09AF /* ViewController_iPad.xib */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
