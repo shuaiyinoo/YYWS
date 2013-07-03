@@ -24,6 +24,7 @@
     [super didReceiveMemoryWarning];
 }
 
+
 //定义界面按钮日常工作
 -(IBAction)dayWorkButtonOnClick:(id)Sender{
    

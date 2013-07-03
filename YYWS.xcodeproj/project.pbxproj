@@ -54,6 +54,16 @@
 		71CF98E21783F69100D266A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CF98E11783F69100D266A6 /* SystemConfiguration.framework */; };
 		71CF98E41783F69A00D266A6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CF98E31783F69A00D266A6 /* MobileCoreServices.framework */; };
 		71CF98E61783F6B200D266A6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CF98E51783F6B200D266A6 /* CFNetwork.framework */; };
+		71CF98F7178410B900D266A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF98F5178410B900D266A6 /* LoginViewController.m */; };
+		71CF98F8178410B900D266A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF98F6178410B900D266A6 /* LoginViewController.xib */; };
+		71CF98FF178413AF00D266A6 /* DateSynViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF98FD178413AF00D266A6 /* DateSynViewController.m */; };
+		71CF9900178413AF00D266A6 /* DateSynViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF98FE178413AF00D266A6 /* DateSynViewController.xib */; };
+		71CF9904178413BE00D266A6 /* SystemSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF9902178413BE00D266A6 /* SystemSetViewController.m */; };
+		71CF9905178413BE00D266A6 /* SystemSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF9903178413BE00D266A6 /* SystemSetViewController.xib */; };
+		71CF9909178413D600D266A6 /* VersionInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF9907178413D600D266A6 /* VersionInfoViewController.m */; };
+		71CF990A178413D600D266A6 /* VersionInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF9908178413D600D266A6 /* VersionInfoViewController.xib */; };
+		71CF990C1784144F00D266A6 /* Readme_For_ShuaiYin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71CF990B1784144F00D266A6 /* Readme_For_ShuaiYin.txt */; };
+		71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +147,20 @@
 		71CF98E11783F69100D266A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		71CF98E31783F69A00D266A6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		71CF98E51783F6B200D266A6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		71CF98F4178410B900D266A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		71CF98F5178410B900D266A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71CF98F6178410B900D266A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		71CF98FC178413AF00D266A6 /* DateSynViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSynViewController.h; sourceTree = "<group>"; };
+		71CF98FD178413AF00D266A6 /* DateSynViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSynViewController.m; sourceTree = "<group>"; };
+		71CF98FE178413AF00D266A6 /* DateSynViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateSynViewController.xib; sourceTree = "<group>"; };
+		71CF9901178413BE00D266A6 /* SystemSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSetViewController.h; sourceTree = "<group>"; };
+		71CF9902178413BE00D266A6 /* SystemSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSetViewController.m; sourceTree = "<group>"; };
+		71CF9903178413BE00D266A6 /* SystemSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemSetViewController.xib; sourceTree = "<group>"; };
+		71CF9906178413D600D266A6 /* VersionInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionInfoViewController.h; sourceTree = "<group>"; };
+		71CF9907178413D600D266A6 /* VersionInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionInfoViewController.m; sourceTree = "<group>"; };
+		71CF9908178413D600D266A6 /* VersionInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VersionInfoViewController.xib; sourceTree = "<group>"; };
+		71CF990B1784144F00D266A6 /* Readme_For_ShuaiYin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_For_ShuaiYin.txt; sourceTree = "<group>"; };
+		71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_For_LvLei.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +191,7 @@
 				71C305821783CFAB001A09AF /* YYWS */,
 				71C3057B1783CFAB001A09AF /* Frameworks */,
 				71C3057A1783CFAB001A09AF /* Products */,
+				71CF990F178414CC00D266A6 /* Readme_For_IOS_LOG */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +224,7 @@
 		71C305821783CFAB001A09AF /* YYWS */ = {
 			isa = PBXGroup;
 			children = (
+				71CF98E81784100A00D266A6 /* Other */,
 				71CF98E717840DD600D266A6 /* Main */,
 				71CF988A1783F52500D266A6 /* Utils */,
 				71C305A21783E9BA001A09AF /* Images */,
@@ -375,6 +401,66 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		71CF98E81784100A00D266A6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				71CF98FB1784139B00D266A6 /* DateSyn */,
+				71CF98FA1784138F00D266A6 /* SystemSet */,
+				71CF98F91784138000D266A6 /* VersionInfo */,
+				71CF98E91784102700D266A6 /* Login */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		71CF98E91784102700D266A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				71CF98F4178410B900D266A6 /* LoginViewController.h */,
+				71CF98F5178410B900D266A6 /* LoginViewController.m */,
+				71CF98F6178410B900D266A6 /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		71CF98F91784138000D266A6 /* VersionInfo */ = {
+			isa = PBXGroup;
+			children = (
+				71CF9906178413D600D266A6 /* VersionInfoViewController.h */,
+				71CF9907178413D600D266A6 /* VersionInfoViewController.m */,
+				71CF9908178413D600D266A6 /* VersionInfoViewController.xib */,
+			);
+			name = VersionInfo;
+			sourceTree = "<group>";
+		};
+		71CF98FA1784138F00D266A6 /* SystemSet */ = {
+			isa = PBXGroup;
+			children = (
+				71CF9901178413BE00D266A6 /* SystemSetViewController.h */,
+				71CF9902178413BE00D266A6 /* SystemSetViewController.m */,
+				71CF9903178413BE00D266A6 /* SystemSetViewController.xib */,
+			);
+			name = SystemSet;
+			sourceTree = "<group>";
+		};
+		71CF98FB1784139B00D266A6 /* DateSyn */ = {
+			isa = PBXGroup;
+			children = (
+				71CF98FC178413AF00D266A6 /* DateSynViewController.h */,
+				71CF98FD178413AF00D266A6 /* DateSynViewController.m */,
+				71CF98FE178413AF00D266A6 /* DateSynViewController.xib */,
+			);
+			name = DateSyn;
+			sourceTree = "<group>";
+		};
+		71CF990F178414CC00D266A6 /* Readme_For_IOS_LOG */ = {
+			isa = PBXGroup;
+			children = (
+				71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */,
+				71CF990B1784144F00D266A6 /* Readme_For_ShuaiYin.txt */,
+			);
+			name = Readme_For_IOS_LOG;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +526,12 @@
 				71C305B01783EABA001A09AF /* mobile_r4_c6.png in Resources */,
 				71C305B11783EABA001A09AF /* hjgl.png in Resources */,
 				71CF989E1783F54B00D266A6 /* gps.db in Resources */,
+				71CF98F8178410B900D266A6 /* LoginViewController.xib in Resources */,
+				71CF9900178413AF00D266A6 /* DateSynViewController.xib in Resources */,
+				71CF9905178413BE00D266A6 /* SystemSetViewController.xib in Resources */,
+				71CF990A178413D600D266A6 /* VersionInfoViewController.xib in Resources */,
+				71CF990C1784144F00D266A6 /* Readme_For_ShuaiYin.txt in Resources */,
+				71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +564,10 @@
 				71CF98CE1783F5DC00D266A6 /* SoapXmlParseHelper.m in Sources */,
 				71CF98D21783F5F100D266A6 /* SoapHelper.m in Sources */,
 				71CF98D61783F62000D266A6 /* MBProgressHUD.m in Sources */,
+				71CF98F7178410B900D266A6 /* LoginViewController.m in Sources */,
+				71CF98FF178413AF00D266A6 /* DateSynViewController.m in Sources */,
+				71CF9904178413BE00D266A6 /* SystemSetViewController.m in Sources */,
+				71CF9909178413D600D266A6 /* VersionInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
