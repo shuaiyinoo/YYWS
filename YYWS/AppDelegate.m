@@ -12,6 +12,7 @@
 
 @implementation AppDelegate
 
+
 - (void)dealloc
 {
     [_window release];
@@ -22,15 +23,35 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
+        // 生成一个ViewControlle对象作为导航栏的第一个视图
+        ViewController *viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil] autorelease];
+        _naviController = [[UINavigationController alloc]initWithRootViewController:viewController];
+        //给导航控制器设置颜色样式和按钮
+        _naviController.navigationBar.tintColor = [UIColor blackColor];
+        viewController.title = @"营运微视";
+        //设置登录按钮
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"登录"style:UIBarButtonItemStyleDone target:self action:@selector(loginButton:)];
+        viewController.navigationItem.rightBarButtonItem = rightButton;
+        
+        //将该导航栏作为根视图控制器；
+        self.window.rootViewController = _naviController ;
+        
     } else {
         self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil] autorelease];
+        self.window.rootViewController = self.viewController;
     }
-    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+//登录的按钮事件
+-(void)loginButton:(id)sender{
+    //LoginViewController *loginc = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    //loginc.title = @"用户登录";
+    
+    //[_naviController pushViewController:loginc animated:true];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

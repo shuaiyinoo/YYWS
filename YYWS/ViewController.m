@@ -17,13 +17,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+//定义界面按钮日常工作
+-(IBAction)dayWorkButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮数据分析
+-(IBAction)dateButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮促销动态
+-(IBAction)saleButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮货架管理
+-(IBAction)shelfButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮数据同步
+-(IBAction)dateSynButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮系统设置
+-(IBAction)systemSetButtonOnClick:(id)Sender{
+    
+}
+//定义界面按钮版本信息
+-(IBAction)versionInfoButtonOnClick:(id)Sender{
+    
+}
 @end
