@@ -66,6 +66,14 @@
 		71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */; };
 		71CF99121784184800D266A6 /* versionimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF99111784184800D266A6 /* versionimg.png */; };
 		71CF991417841B1900D266A6 /* bodybgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991317841B1900D266A6 /* bodybgs.png */; };
+		71CF991917841F7E00D266A6 /* DayWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF991717841F7E00D266A6 /* DayWorkViewController.m */; };
+		71CF991A17841F7E00D266A6 /* DayWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991817841F7E00D266A6 /* DayWorkViewController.xib */; };
+		71CF9922178420FF00D266A6 /* icon101.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991C178420FF00D266A6 /* icon101.png */; };
+		71CF9923178420FF00D266A6 /* icon102.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991D178420FF00D266A6 /* icon102.png */; };
+		71CF9924178420FF00D266A6 /* icon103.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991E178420FF00D266A6 /* icon103.png */; };
+		71CF9925178420FF00D266A6 /* icon104.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991F178420FF00D266A6 /* icon104.png */; };
+		71CF9926178420FF00D266A6 /* icon105.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF9920178420FF00D266A6 /* icon105.png */; };
+		71CF9927178420FF00D266A6 /* icon401.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF9921178420FF00D266A6 /* icon401.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +173,15 @@
 		71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_For_LvLei.txt; sourceTree = "<group>"; };
 		71CF99111784184800D266A6 /* versionimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = versionimg.png; sourceTree = "<group>"; };
 		71CF991317841B1900D266A6 /* bodybgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bodybgs.png; sourceTree = "<group>"; };
+		71CF991617841F7E00D266A6 /* DayWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayWorkViewController.h; sourceTree = "<group>"; };
+		71CF991717841F7E00D266A6 /* DayWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayWorkViewController.m; sourceTree = "<group>"; };
+		71CF991817841F7E00D266A6 /* DayWorkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWorkViewController.xib; sourceTree = "<group>"; };
+		71CF991C178420FF00D266A6 /* icon101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon101.png; sourceTree = "<group>"; };
+		71CF991D178420FF00D266A6 /* icon102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon102.png; sourceTree = "<group>"; };
+		71CF991E178420FF00D266A6 /* icon103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon103.png; sourceTree = "<group>"; };
+		71CF991F178420FF00D266A6 /* icon104.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon104.png; sourceTree = "<group>"; };
+		71CF9920178420FF00D266A6 /* icon105.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon105.png; sourceTree = "<group>"; };
+		71CF9921178420FF00D266A6 /* icon401.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon401.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +271,7 @@
 		71C305A21783E9BA001A09AF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				71CF991B178420CF00D266A6 /* DayWork */,
 				71CF99101784182100D266A6 /* Version */,
 				71C305A31783EA07001A09AF /* Main */,
 			);
@@ -409,6 +427,7 @@
 		71CF98E81784100A00D266A6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				71CF991517841F6C00D266A6 /* DayWork */,
 				71CF98FB1784139B00D266A6 /* DateSyn */,
 				71CF98FA1784138F00D266A6 /* SystemSet */,
 				71CF98F91784138000D266A6 /* VersionInfo */,
@@ -473,6 +492,29 @@
 				71CF99111784184800D266A6 /* versionimg.png */,
 			);
 			name = Version;
+			sourceTree = "<group>";
+		};
+		71CF991517841F6C00D266A6 /* DayWork */ = {
+			isa = PBXGroup;
+			children = (
+				71CF991617841F7E00D266A6 /* DayWorkViewController.h */,
+				71CF991717841F7E00D266A6 /* DayWorkViewController.m */,
+				71CF991817841F7E00D266A6 /* DayWorkViewController.xib */,
+			);
+			name = DayWork;
+			sourceTree = "<group>";
+		};
+		71CF991B178420CF00D266A6 /* DayWork */ = {
+			isa = PBXGroup;
+			children = (
+				71CF991C178420FF00D266A6 /* icon101.png */,
+				71CF991D178420FF00D266A6 /* icon102.png */,
+				71CF991E178420FF00D266A6 /* icon103.png */,
+				71CF991F178420FF00D266A6 /* icon104.png */,
+				71CF9920178420FF00D266A6 /* icon105.png */,
+				71CF9921178420FF00D266A6 /* icon401.png */,
+			);
+			name = DayWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +590,13 @@
 				71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */,
 				71CF99121784184800D266A6 /* versionimg.png in Resources */,
 				71CF991417841B1900D266A6 /* bodybgs.png in Resources */,
+				71CF991A17841F7E00D266A6 /* DayWorkViewController.xib in Resources */,
+				71CF9922178420FF00D266A6 /* icon101.png in Resources */,
+				71CF9923178420FF00D266A6 /* icon102.png in Resources */,
+				71CF9924178420FF00D266A6 /* icon103.png in Resources */,
+				71CF9925178420FF00D266A6 /* icon104.png in Resources */,
+				71CF9926178420FF00D266A6 /* icon105.png in Resources */,
+				71CF9927178420FF00D266A6 /* icon401.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +633,7 @@
 				71CF98FF178413AF00D266A6 /* DateSynViewController.m in Sources */,
 				71CF9904178413BE00D266A6 /* SystemSetViewController.m in Sources */,
 				71CF9909178413D600D266A6 /* VersionInfoViewController.m in Sources */,
+				71CF991917841F7E00D266A6 /* DayWorkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

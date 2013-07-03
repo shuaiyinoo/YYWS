@@ -10,6 +10,7 @@
 #import "DateSynViewController.h"
 #import "SystemSetViewController.h"
 #import "VersionInfoViewController.h"
+#import "DayWorkViewController.h"
 
 @interface ViewController ()
 
@@ -30,7 +31,10 @@
 
 //定义界面按钮日常工作
 -(IBAction)dayWorkButtonOnClick:(id)Sender{
-   
+    DayWorkViewController *dayWork = [[DayWorkViewController alloc]initWithNibName:@"DayWorkViewController" bundle:nil];
+    dayWork.title = @"日常工作";
+    
+    [self.navigationController pushViewController:dayWork animated:true];
 }
 //定义界面按钮数据分析
 -(IBAction)dateButtonOnClick:(id)Sender{
