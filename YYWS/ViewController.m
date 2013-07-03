@@ -24,9 +24,9 @@
     [super didReceiveMemoryWarning];
 }
 
-//定义界面按钮日常工作  test
+//定义界面按钮日常工作
 -(IBAction)dayWorkButtonOnClick:(id)Sender{
-   //1
+   //2
 }
 //定义界面按钮数据分析
 -(IBAction)dateButtonOnClick:(id)Sender{
