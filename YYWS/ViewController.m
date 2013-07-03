@@ -26,7 +26,7 @@
 
 //定义界面按钮日常工作  test
 -(IBAction)dayWorkButtonOnClick:(id)Sender{
-   
+   //1
 }
 //定义界面按钮数据分析
 -(IBAction)dateButtonOnClick:(id)Sender{
