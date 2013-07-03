@@ -24,7 +24,7 @@
     [super didReceiveMemoryWarning];
 }
 
-//定义界面按钮日常工作
+//定义界面按钮日常工作  test
 -(IBAction)dayWorkButtonOnClick:(id)Sender{
     NSLog(@"CESHI");
     NSLog(@"CESHI");
