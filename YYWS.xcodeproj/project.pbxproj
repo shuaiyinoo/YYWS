@@ -64,6 +64,8 @@
 		71CF990A178413D600D266A6 /* VersionInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF9908178413D600D266A6 /* VersionInfoViewController.xib */; };
 		71CF990C1784144F00D266A6 /* Readme_For_ShuaiYin.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71CF990B1784144F00D266A6 /* Readme_For_ShuaiYin.txt */; };
 		71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */; };
+		71CF99121784184800D266A6 /* versionimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF99111784184800D266A6 /* versionimg.png */; };
+		71CF991417841B1900D266A6 /* bodybgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991317841B1900D266A6 /* bodybgs.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,8 @@
 		71CF9908178413D600D266A6 /* VersionInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VersionInfoViewController.xib; sourceTree = "<group>"; };
 		71CF990B1784144F00D266A6 /* Readme_For_ShuaiYin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_For_ShuaiYin.txt; sourceTree = "<group>"; };
 		71CF990D1784149500D266A6 /* Readme_For_LvLei.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme_For_LvLei.txt; sourceTree = "<group>"; };
+		71CF99111784184800D266A6 /* versionimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = versionimg.png; sourceTree = "<group>"; };
+		71CF991317841B1900D266A6 /* bodybgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bodybgs.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 		71C305A21783E9BA001A09AF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				71CF99101784182100D266A6 /* Version */,
 				71C305A31783EA07001A09AF /* Main */,
 			);
 			name = Images;
@@ -461,6 +466,15 @@
 			name = Readme_For_IOS_LOG;
 			sourceTree = "<group>";
 		};
+		71CF99101784182100D266A6 /* Version */ = {
+			isa = PBXGroup;
+			children = (
+				71CF991317841B1900D266A6 /* bodybgs.png */,
+				71CF99111784184800D266A6 /* versionimg.png */,
+			);
+			name = Version;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -532,6 +546,8 @@
 				71CF990A178413D600D266A6 /* VersionInfoViewController.xib in Resources */,
 				71CF990C1784144F00D266A6 /* Readme_For_ShuaiYin.txt in Resources */,
 				71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */,
+				71CF99121784184800D266A6 /* versionimg.png in Resources */,
+				71CF991417841B1900D266A6 /* bodybgs.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
