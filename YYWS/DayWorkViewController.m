@@ -7,6 +7,9 @@
 //
 
 #import "DayWorkViewController.h"
+#import "ShopInfoViewController.h"
+#import "DIYTableViewController.h"
+#import "TabThreeViewController.h"
 
 @interface DayWorkViewController ()
 
@@ -33,6 +36,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//点击店铺情况时候的跳转
+-(IBAction)shipInfoButtonOnClick:(id)Sender{
+    ShopInfoViewController *shopInfo = [[ShopInfoViewController alloc]initWithNibName:@"ShopInfoViewController" bundle:nil];
+    shopInfo.title = @"店铺情况";
+    
+    [self.navigationController pushViewController:shopInfo animated:true];
+    
+    //UIViewController *viewController3 = [[TabThreeViewController alloc] init];
+    //viewController3.title = @"店铺情况";
+    //[self.navigationController pushViewController:viewController3 animated:true];
 }
 
 @end
