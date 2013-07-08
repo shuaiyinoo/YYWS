@@ -894,8 +894,11 @@
 		</object>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 =======
+=======
+>>>>>>> parent of 688b089... ll
 =======
 >>>>>>> parent of 688b089... ll
 		<object class="IBClassDescriber" key="IBDocument.Classes">
@@ -903,6 +906,7 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DayWorkViewController</string>
 					<string key="superclassName">UIViewController</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">shipInfoButtonOnClick:</string>
@@ -915,6 +919,8 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
+=======
+>>>>>>> parent of 688b089... ll
 =======
 >>>>>>> parent of 688b089... ll
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -933,7 +939,10 @@
 			</array>
 		</object>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 911bfb5ddec78ce4c15ba9f249b0fc387aa2c3dd
+=======
+>>>>>>> parent of 688b089... ll
 =======
 >>>>>>> parent of 688b089... ll
 		<int key="IBDocument.localizationMode">0</int>

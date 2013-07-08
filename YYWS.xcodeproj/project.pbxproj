@@ -727,6 +727,7 @@
 				71CF9927178420FF00D266A6 /* icon401.png in Resources */,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				07C1EA6F1785EB410070331E /* LoginViewController.xib in Resources */,
 				07C12C41178743CB00E6E245 /* boxbg.png in Resources */,
 				07C12C4C1787786300E6E245 /* login1.png in Resources */,
@@ -749,6 +750,8 @@
 				71CF995A178536E200D266A6 /* picicon.png in Resources */,
 				71CF995C1785375400D266A6 /* picicons.png in Resources */,
 >>>>>>> 911bfb5ddec78ce4c15ba9f249b0fc387aa2c3dd
+=======
+>>>>>>> parent of 688b089... ll
 =======
 >>>>>>> parent of 688b089... ll
 			);
@@ -790,6 +793,7 @@
 				71CF991917841F7E00D266A6 /* DayWorkViewController.m in Sources */,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				07C12C4917876FC300E6E245 /* JKCustomAlert.m in Sources */,
 				07BCFD88178A95B70090207A /* ChronicleOfEvents.m in Sources */,
 =======
@@ -801,6 +805,8 @@
 				71CF9962178555EE00D266A6 /* UseNETGetShopInfoDao.m in Sources */,
 				71CF99691785674B00D266A6 /* JSONKit.m in Sources */,
 >>>>>>> 911bfb5ddec78ce4c15ba9f249b0fc387aa2c3dd
+=======
+>>>>>>> parent of 688b089... ll
 =======
 >>>>>>> parent of 688b089... ll
 			);
