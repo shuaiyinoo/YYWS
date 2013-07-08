@@ -1,44 +1,36 @@
 //
-//  LoginViewController.m
-//  yyws
+//  
+//  JKCustomAlert.m
+//  AlertTest
 //
-//  Created by ll on 13-7-4.
-//  Copyright (c) 2013年 三明泰格. All rights reserved.
+//  Created by  on 12-5-9.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "JKCustomAlert.h"
 #import "TPKeyboardAvoidingScrollView.h"
 #import "SoapHelper.h"
 #import "ASIHTTPRequest.h"
 #import "SoapXmlParseHelper.h"
+#import "ViewController.h"
+#import "DayWorkViewController.h"
 
-@interface LoginViewController ()
-
+@interface JKCustomAlert ()
+    @property(nonatomic, retain) NSMutableArray *_buttonArrays;
 @end
 
-@implementation LoginViewController
+@implementation JKCustomAlert
 
-//属性合成
-@synthesize scrollView;
-@synthesize txtUserCode;
-@synthesize txtPassWord;
-@synthesize backbroundImage;
+@synthesize backgroundImage,_buttonArrays,JKdelegate,userName,passWord;
 
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        //设置的背景
-        //判断屏幕分辨率
-        if(ScreenHeight == 480){
-            backbroundImage.image = [UIImage imageNamed:@"Default.png"];
-        }else if(ScreenHeight == 960){
-            backbroundImage.image = [UIImage imageNamed:@"Default@2x.png"];
-        }else if(ScreenHeight == 1136){
-            backbroundImage.image = [UIImage imageNamed:@"Default-568h@2x.png"];
-        }
+- (id)initWithImage:(UIImage *)image {
+    //数据加载完成后初始化Helper对象
+    helper=[[ServiceHelper alloc] initWithDelegate:self];
+    
+    if (self == [super init]) {
+		
+        self.backgroundImage = image;
+        self._buttonArrays = [NSMutableArray arrayWithCapacity:4];
         
         //当该视图启动是获取GPS信息
         if ([CLLocationManager locationServicesEnabled]) { // 检查定位服务是否可用
@@ -56,47 +48,69 @@
     return self;
 }
 
-- (void)viewDidLoad
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    //数据加载完成后初始化Helper对象
+//    helper=[[ServiceHelper alloc] initWithDelegate:self];
+//}
+
+//- (void)didReceiveMemoryWarning
+//{
+//    [super didReceiveMemoryWarning];
+//}
+
+-(void) addButtonWithUIButton:(UIButton *) btn
 {
-    [super viewDidLoad];
-    //数据加载完成后初始化Helper对象
-    helper=[[ServiceHelper alloc] initWithDelegate:self];
+    [_buttonArrays addObject:btn];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+-(void) addUserNameWithUITextField:(UITextField *)userName1{
+    self.userName = userName1;
 }
 
-
-//这个必须放到  @implementation LoginViewController  后面
-//下面这两个方法是加入键盘的滑动事件
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
--(void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [scrollView adjustOffsetToIdealIfNeeded];
+-(void) addPassWordWithUITextField:(UITextField *)passWord1{
+    self.passWord = passWord1;
 }
 
-//下面这个方法是控制键盘的返回类型
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == txtUserCode) {
-        [txtUserCode becomeFirstResponder];
-    }else if (textField == txtPassWord) {
-        [txtPassWord becomeFirstResponder];
-    }else{
-        [textField resignFirstResponder];
+- (void)drawRect:(CGRect)rect {
+	
+	CGSize imageSize = self.backgroundImage.size;
+	[self.backgroundImage drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    
+}
+
+- (void) layoutSubviews {
+    //屏蔽系统的ImageView 和 UIButton
+    for (UIView *v in [self subviews]) {
+        if ([v class] == [UIImageView class]){
+            [v setHidden:YES];
+        }
+           
+     
+        if ([v isKindOfClass:[UIButton class]] ||
+            [v isKindOfClass:NSClassFromString(@"UIThreePartButton")]) {
+            [v setHidden:YES];
+        }
     }
-    return YES;
+    
+    for (int i=0;i<[_buttonArrays count]; i++) {
+        UIButton *btn = [_buttonArrays objectAtIndex:i];
+        btn.tag = i;
+        [self addSubview:btn];
+        [btn addTarget:self action:@selector(loginButtonAsycClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    [self addSubview:userName];
+    [self addSubview:passWord];
 }
 
-//异步登录请求WebServices
-- (IBAction)loginButtonAsycClick:(id)sender{
+- (void)loginButtonAsycClick:(id)sender
+{
+    [userName resignFirstResponder];
+    [passWord resignFirstResponder];
     
     //判断非空
-    if ([txtUserCode text].length == 0 || [txtPassWord text].length == 0) {
+    if ([userName text].length == 0 || [passWord text].length == 0) {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入完整用户编码、密码。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alter show];
         [alter release];
@@ -110,22 +124,25 @@
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"mdbm", nil]];
-    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[txtUserCode text],@"usercode", nil]];
-    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[txtPassWord text],@"pwd", nil]];
+    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[userName text],@"usercode", nil]];
+    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[passWord text],@"pwd", nil]];
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:![defaults objectForKey:@"address"]?@"":[defaults objectForKey:@"address"],@"GPSAddress", nil]];
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:![defaults objectForKey:@"lat"]?@"":[defaults objectForKey:@"lat"],@"GPSJD", nil]];
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:![defaults objectForKey:@"lon"]?@"":[defaults objectForKey:@"lon"],@"GPSWD", nil]];
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"1",@"type", nil]];
     NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SheCha_LoginUser"];
     [helper asynServiceMethod:@"SheCha_LoginUser" soapMessage:soapMsg];
+
 }
+
 #pragma mark 异步请求结果
 -(void)finishSuccessRequest:(NSString*)xml{
     
     //将xml使用SoapXmlParseHelper类转换成想要的结果
     
     NSArray *xmlItem = [xml componentsSeparatedByString:@"|||"];
-        
+    NSLog(@"xml%@",xmlItem);
+    
     if([[xmlItem objectAtIndex:(0)] isEqualToString:@"0"]){
         
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:[xmlItem objectAtIndex:(1)] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
@@ -135,25 +152,34 @@
     }else if([[xmlItem objectAtIndex:(0)] isEqualToString:@"1"]){
         
         NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+        [defaults setObject:[userName text] forKey:@"userName"];
+        [defaults setObject:[passWord text] forKey:@"passWord"];
         [defaults setObject:[xmlItem objectAtIndex:(2)] forKey:@"userType"];
         [defaults setObject:[xmlItem objectAtIndex:(3)] forKey:@"shopInfo"];
         [defaults setObject:[xmlItem objectAtIndex:(4)] forKey:@"shelfType"];
         [defaults setObject:[xmlItem objectAtIndex:(5)] forKey:@"qy"];
+        [defaults setBool:true forKey:@"isLogin"];
         [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
-        
+        [self dismissWithClickedButtonIndex:0 animated:YES];
+        ViewController *vc = [ViewController new];
+        [vc jumpPages];
     }
     [AppHelper removeHUD];//移除动画
 }
 -(void)finishFailRequest:(NSError*)error{
-//    NSLog(@"异步请发生失败:%@\n",[error description]);
+    //    NSLog(@"异步请发生失败:%@\n",[error description]);
     UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"登陆失败、请检查网络。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alter show];
     [alter release];
     [AppHelper removeHUD];//移除动画
 }
-- (void)dealloc {
-    [helper release];
-    [super dealloc];
+
+- (void) show {
+        [super show];
+        CGSize imageSize = self.backgroundImage.size;
+        self.bounds = CGRectMake(0, 0, imageSize.width, imageSize.height);
+        
+
 }
 
 // 定位失败时调用
@@ -181,8 +207,8 @@
             
             [defaults setObject:@"地址" forKey:@"address"];
             
-//            NSLog(@"%@-%@-%@",country,city,plmark.name);
-//            self.m_locationName.text =plmark.name;
+            //            NSLog(@"%@-%@-%@",country,city,plmark.name);
+            //            self.m_locationName.text =plmark.name;
         }
     }];
     [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
@@ -208,4 +234,15 @@
     yGps.longitude = yGps.longitude + offLog*0.0001;
     return yGps;
 }
+
+- (void)dealloc {
+    [_buttonArrays removeAllObjects];
+    [backgroundImage release];
+    [userName release];
+    [passWord release];
+    [helper release];
+    [super dealloc];
+}
+
+
 @end

@@ -34,5 +34,7 @@
 -(IBAction)dateSynButtonOnClick:(id)Sender;
 -(IBAction)systemSetButtonOnClick:(id)Sender;
 -(IBAction)versionInfoButtonOnClick:(id)Sender;
+-(void)showLogin;
+-(void)jumpPages;
 
 @end
