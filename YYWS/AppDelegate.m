@@ -10,8 +10,6 @@
 
 #import "ViewController.h"
 
-#import "LoginViewController.h"
-
 @implementation AppDelegate
 
 
@@ -50,9 +48,9 @@
 
 //登录的按钮事件
 -(void)loginButton:(id)sender{
-    LoginViewController *loginc = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
-    loginc.title = @"用户登录";
-    [self.naviController pushViewController:loginc animated:true];
+    //LoginViewController *loginc = [[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
+    //loginc.title = @"用户登录";
+    
     //[_naviController pushViewController:loginc animated:true];
 }
 

@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07BCFD88178A95B70090207A /* ChronicleOfEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BCFD86178A95B70090207A /* ChronicleOfEvents.m */; };
-		07BCFD89178A95B70090207A /* ChronicleOfEvents.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BCFD87178A95B70090207A /* ChronicleOfEvents.xib */; };
-		07C12C41178743CB00E6E245 /* boxbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C12C40178743CB00E6E245 /* boxbg.png */; };
-		07C12C4917876FC300E6E245 /* JKCustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C12C4817876FC300E6E245 /* JKCustomAlert.m */; };
-		07C12C4C1787786300E6E245 /* login1.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C12C4A1787786300E6E245 /* login1.png */; };
-		07C12C4D1787786300E6E245 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 07C12C4B1787786300E6E245 /* login.png */; };
-		07C1EA6F1785EB410070331E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C1EA6E1785EB410070331E /* LoginViewController.xib */; };
 		71C3057D1783CFAB001A09AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C3057C1783CFAB001A09AF /* UIKit.framework */; };
 		71C3057F1783CFAB001A09AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C3057E1783CFAB001A09AF /* Foundation.framework */; };
 		71C305811783CFAB001A09AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C305801783CFAB001A09AF /* CoreGraphics.framework */; };
@@ -62,6 +55,7 @@
 		71CF98E41783F69A00D266A6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CF98E31783F69A00D266A6 /* MobileCoreServices.framework */; };
 		71CF98E61783F6B200D266A6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CF98E51783F6B200D266A6 /* CFNetwork.framework */; };
 		71CF98F7178410B900D266A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF98F5178410B900D266A6 /* LoginViewController.m */; };
+		71CF98F8178410B900D266A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF98F6178410B900D266A6 /* LoginViewController.xib */; };
 		71CF98FF178413AF00D266A6 /* DateSynViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF98FD178413AF00D266A6 /* DateSynViewController.m */; };
 		71CF9900178413AF00D266A6 /* DateSynViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF98FE178413AF00D266A6 /* DateSynViewController.xib */; };
 		71CF9904178413BE00D266A6 /* SystemSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF9902178413BE00D266A6 /* SystemSetViewController.m */; };
@@ -105,15 +99,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		07BCFD85178A95B70090207A /* ChronicleOfEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChronicleOfEvents.h; sourceTree = "<group>"; };
-		07BCFD86178A95B70090207A /* ChronicleOfEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChronicleOfEvents.m; sourceTree = "<group>"; };
-		07BCFD87178A95B70090207A /* ChronicleOfEvents.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChronicleOfEvents.xib; sourceTree = "<group>"; };
-		07C12C40178743CB00E6E245 /* boxbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxbg.png; sourceTree = "<group>"; };
-		07C12C4717876FC300E6E245 /* JKCustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCustomAlert.h; sourceTree = "<group>"; };
-		07C12C4817876FC300E6E245 /* JKCustomAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCustomAlert.m; sourceTree = "<group>"; };
-		07C12C4A1787786300E6E245 /* login1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login1.png; sourceTree = "<group>"; };
-		07C12C4B1787786300E6E245 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
-		07C1EA6E1785EB410070331E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		71C305791783CFAB001A09AF /* YYWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C3057C1783CFAB001A09AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		71C3057E1783CFAB001A09AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,6 +181,7 @@
 		71CF98E51783F6B200D266A6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		71CF98F4178410B900D266A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71CF98F5178410B900D266A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71CF98F6178410B900D266A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		71CF98FC178413AF00D266A6 /* DateSynViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSynViewController.h; sourceTree = "<group>"; };
 		71CF98FD178413AF00D266A6 /* DateSynViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSynViewController.m; sourceTree = "<group>"; };
 		71CF98FE178413AF00D266A6 /* DateSynViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateSynViewController.xib; sourceTree = "<group>"; };
@@ -271,16 +257,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07BCFD84178A95710090207A /* ChronicleOfEvents */ = {
-			isa = PBXGroup;
-			children = (
-				07BCFD85178A95B70090207A /* ChronicleOfEvents.h */,
-				07BCFD86178A95B70090207A /* ChronicleOfEvents.m */,
-				07BCFD87178A95B70090207A /* ChronicleOfEvents.xib */,
-			);
-			name = ChronicleOfEvents;
-			sourceTree = "<group>";
-		};
 		71C305701783CFAB001A09AF = {
 			isa = PBXGroup;
 			children = (
@@ -356,9 +332,6 @@
 		71C305A31783EA07001A09AF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				07C12C4A1787786300E6E245 /* login1.png */,
-				07C12C4B1787786300E6E245 /* login.png */,
-				07C12C40178743CB00E6E245 /* boxbg.png */,
 				71C305AA1783EABA001A09AF /* cxdt.png */,
 				71C305AB1783EABA001A09AF /* rcgz.png */,
 				71C305AC1783EABA001A09AF /* mobile_r4_c6.png */,
@@ -494,8 +467,6 @@
 		71CF98E717840DD600D266A6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				07C12C4717876FC300E6E245 /* JKCustomAlert.h */,
-				07C12C4817876FC300E6E245 /* JKCustomAlert.m */,
 				71C3058B1783CFAB001A09AF /* AppDelegate.h */,
 				71C3058C1783CFAB001A09AF /* AppDelegate.m */,
 				71C305941783CFAB001A09AF /* ViewController.h */,
@@ -509,7 +480,6 @@
 		71CF98E81784100A00D266A6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				07BCFD84178A95710090207A /* ChronicleOfEvents */,
 				71CF991517841F6C00D266A6 /* DayWork */,
 				71CF98FB1784139B00D266A6 /* DateSyn */,
 				71CF98FA1784138F00D266A6 /* SystemSet */,
@@ -522,9 +492,9 @@
 		71CF98E91784102700D266A6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				07C1EA6E1785EB410070331E /* LoginViewController.xib */,
 				71CF98F4178410B900D266A6 /* LoginViewController.h */,
 				71CF98F5178410B900D266A6 /* LoginViewController.m */,
+				71CF98F6178410B900D266A6 /* LoginViewController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -740,6 +710,7 @@
 				71C305B01783EABA001A09AF /* mobile_r4_c6.png in Resources */,
 				71C305B11783EABA001A09AF /* hjgl.png in Resources */,
 				71CF989E1783F54B00D266A6 /* gps.db in Resources */,
+				71CF98F8178410B900D266A6 /* LoginViewController.xib in Resources */,
 				71CF9900178413AF00D266A6 /* DateSynViewController.xib in Resources */,
 				71CF9905178413BE00D266A6 /* SystemSetViewController.xib in Resources */,
 				71CF990A178413D600D266A6 /* VersionInfoViewController.xib in Resources */,
@@ -754,6 +725,7 @@
 				71CF9925178420FF00D266A6 /* icon104.png in Resources */,
 				71CF9926178420FF00D266A6 /* icon105.png in Resources */,
 				71CF9927178420FF00D266A6 /* icon401.png in Resources */,
+<<<<<<< HEAD
 <<<<<<< HEAD
 				07C1EA6F1785EB410070331E /* LoginViewController.xib in Resources */,
 				07C12C41178743CB00E6E245 /* boxbg.png in Resources */,
@@ -777,6 +749,8 @@
 				71CF995A178536E200D266A6 /* picicon.png in Resources */,
 				71CF995C1785375400D266A6 /* picicons.png in Resources */,
 >>>>>>> 911bfb5ddec78ce4c15ba9f249b0fc387aa2c3dd
+=======
+>>>>>>> parent of 688b089... ll
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +789,7 @@
 				71CF9909178413D600D266A6 /* VersionInfoViewController.m in Sources */,
 				71CF991917841F7E00D266A6 /* DayWorkViewController.m in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				07C12C4917876FC300E6E245 /* JKCustomAlert.m in Sources */,
 				07BCFD88178A95B70090207A /* ChronicleOfEvents.m in Sources */,
 =======
@@ -826,6 +801,8 @@
 				71CF9962178555EE00D266A6 /* UseNETGetShopInfoDao.m in Sources */,
 				71CF99691785674B00D266A6 /* JSONKit.m in Sources */,
 >>>>>>> 911bfb5ddec78ce4c15ba9f249b0fc387aa2c3dd
+=======
+>>>>>>> parent of 688b089... ll
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
