@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "ShopInfoEntity.h"
 
-@interface ShopInfoFKViewController : UIViewController
+@interface ShopInfoFKViewController : UIViewController{
+    IBOutlet UIScrollView *sv;
+    IBOutlet UIPageControl *page;
+    NSArray *Arr;
+    int TimeNum;
+    BOOL Tend;
+}
 
 @property (retain,nonatomic) ShopInfoEntity *shopInfoEntity;
+
+@property (retain,nonatomic) IBOutlet UILabel *shopInfoEntityTitle;
+@property (retain,nonatomic) IBOutlet UILabel *shopInfoEntityInfo;
+@property (retain,nonatomic) IBOutlet UITextView *shopInfoEntityCount;
 
 @end

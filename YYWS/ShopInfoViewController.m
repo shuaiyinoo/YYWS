@@ -11,12 +11,12 @@
 #import "SoapHelper.h"
 #import "JSONKit.h"
 #import "PullingRefreshTableView.h"
-#import "PMCalendar.h"
 #import "ShopInfoEntity.h"
+#import "ITTBaseDataSourceImp.h"
+#import "ShopInfoFKViewController.h"
 
 @interface ShopInfoViewController ()
-    //选择日期时
-    @property (nonatomic, strong) PMCalendarController *pmCC;
+
 @end
 
 @implementation ShopInfoViewController
@@ -29,7 +29,7 @@
 //合成条件
 @synthesize shopcodeTextField;
 @synthesize dataTextField;
-@synthesize pmCC;
+@synthesize dataButton;
 
 - (void)viewDidUnload
 {
@@ -82,6 +82,17 @@
     //[dataTextField resignFirstResponder];
     //dataTextField.userInteractionEnabled = NO;
     self.shopInfoData = [[NSMutableArray alloc]init];
+    //初始化日历控件
+    _calendarView = [ITTCalendarView viewFromNib];
+    ITTBaseDataSourceImp *dataSource = [[ITTBaseDataSourceImp alloc] init];
+    _calendarView.date = [NSDate dateWithTimeIntervalSinceNow:2*24*60*60];
+    _calendarView.dataSource = dataSource;
+    _calendarView.delegate = self;
+    _calendarView.frame = CGRectMake(8, 40, 309, 410);
+    _calendarView.allowsMultipleSelection = TRUE;
+    [_calendarView showInView:self.view];
+    [_calendarView hide];
+    [dataSource release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -132,25 +143,32 @@
 
 //实现表示图的方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+   //在点击单元格的时候跳转到详细页面但是现在这里点击无效
     
 }
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSUInteger row = [indexPath row];
-    NSString *rowValue = [[self.shopInfoData valueForKey:@"title"] objectAtIndex:row];
+//    NSString *rowValue = [[self.shopInfoData valueForKey:@"title"] objectAtIndex:row];
+//    
+//    NSString *message = [[NSString alloc] initWithFormat:@"你选择的标题是%@",rowValue];
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"标题选择"
+//                                                    message:message delegate:self
+//                                          cancelButtonTitle:@"OK"
+//                                          otherButtonTitles:nil, nil];
+//    
+//    [alert show];
+//    [alert release];
+//    [message release];
+//    //实现点击时，让点击的那个选中慢慢消失
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *message = [[NSString alloc] initWithFormat:@"你选择的标题是%@",rowValue];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"标题选择"
-                                                    message:message delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil, nil];
+    ShopInfoFKViewController *shopFKInfo = [[ShopInfoFKViewController alloc]initWithNibName:@"ShopInfoFKViewController" bundle:nil];
+    shopFKInfo.title = @"店铺详情";
+    shopFKInfo.shopInfoEntity = [self.shopInfoData objectAtIndex:row];
     
-    [alert show];
-    [alert release];
-    [message release];
-    //实现点击时，让点击的那个选中慢慢消失
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.navigationController pushViewController:shopFKInfo animated:true];
 }
 
 
@@ -172,6 +190,8 @@
     [AppHelper showHUD:@"数据获取中"];//显示动画
     //归零页面
     self.page = 0;
+    [self.shopInfoData removeAllObjects];
+    
     [self loadData];
 }
 
@@ -297,25 +317,42 @@
     self.page++;
 }
 
-#pragma mark DatePack
-- (IBAction)showCalendar:(id)sender{
-    self.pmCC = [[PMCalendarController alloc] init];
-    pmCC.delegate = self;
-    pmCC.mondayFirstDayOfWeek = YES;
-    
-    [pmCC presentCalendarFromView:sender
-         permittedArrowDirections:PMCalendarArrowDirectionAny
-                         animated:YES];
-    [self calendarController:pmCC didChangePeriod:pmCC.period];
-}
-#pragma mark PMCalendarControllerDelegate methods
-- (void)calendarController:(PMCalendarController *)calendarController didChangePeriod:(PMPeriod *)newPeriod{
-     dataTextField.text = [NSString stringWithFormat:@"%@"
-                           , [newPeriod.startDate dateStringWithFormat:@"yyyy-MM-dd"]];
-    [dataTextField resignFirstResponder];//禁止键盘
-}
-
+//键盘放弃事件
 -(IBAction)textFiledReturnEditing:(id)sender {
     [sender resignFirstResponder];
 }
+
+//下面是日历控件
+- (IBAction)showCalendar:(id)sender
+{
+    if (_calendarView.appear){
+        [_calendarView hide];
+    }else{
+        [_calendarView showInView:self.view];
+    }
+}
+- (NSString*) stringFromFomate:(NSDate*) date formate:(NSString*)formate
+{
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:formate];
+	NSString *str = [formatter stringFromDate:date];
+	[formatter release];
+	return str;
+}
+- (void)calendarViewDidSelectDay:(ITTCalendarView*)calendarView calDay:(ITTCalDay*)calDay
+{
+    NSArray *selectedDates = calendarView.selectedDateArray;
+    if (calendarView.allowsMultipleSelection){
+        for (NSDate *date in selectedDates){
+            //NSLog(@"selected date %@", [self stringFromFomate:date formate:@"yyyy-MM-dd"]);
+            
+            //显示时间到控件上
+            [dataButton setTitle:[self stringFromFomate:date formate:@"yyyy-MM-dd"] forState:UIControlStateNormal];
+            dataTextField.text = [self stringFromFomate:date formate:@"yyyy-MM-dd"];
+        }
+    }else{
+        //ITTDINFO(@"selected date %@", [self stringFromFomate:calendarView.selectedDate formate:@"yyyy-MM-dd"]);
+    }
+}
+
 @end

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ServiceHelper.h"
 #import "PullingRefreshTableView.h"
-#import "PMCalendar.h"
+#import "ITTCalendarView.h"
 
-@interface ShopInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,ServiceHelperDelegate,PullingRefreshTableViewDelegate,PMCalendarControllerDelegate>{
+@interface ShopInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,ServiceHelperDelegate,PullingRefreshTableViewDelegate,ITTCalendarViewDelegate>{
     //请求登录对象
     ServiceHelper *helper;
-    
-    
+    //时间控件
+    ITTCalendarView *_calendarView;
 }
 
 @property (retain,nonatomic) PullingRefreshTableView *shopinfoTableView;
@@ -26,6 +26,7 @@
 //条件
 @property (retain,nonatomic) IBOutlet UITextField *shopcodeTextField;
 @property (retain,nonatomic) IBOutlet UITextField *dataTextField;
+@property (retain,nonatomic) IBOutlet UIButton *dataButton;
 
 - (IBAction)showCalendar:(id)sender;
 @end
