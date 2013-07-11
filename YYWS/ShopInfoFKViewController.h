@@ -8,13 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ShopInfoEntity.h"
+#import "EScrollerView.h"
 
-@interface ShopInfoFKViewController : UIViewController{
-    IBOutlet UIScrollView *sv;
+@interface ShopInfoFKViewController : UIViewController<EScrollerViewDelegate>{
     IBOutlet UIPageControl *page;
-    NSArray *Arr;
-    int TimeNum;
-    BOOL Tend;
 }
 
 @property (retain,nonatomic) ShopInfoEntity *shopInfoEntity;

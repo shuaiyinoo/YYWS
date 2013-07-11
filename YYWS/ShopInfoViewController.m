@@ -119,6 +119,8 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:ShopInfoCellIdentifier];
     }
+    cell.selectionStyle=UITableViewCellSelectionStyleBlue;
+    
     NSUInteger row = [indexPath row];
     ShopInfoEntity *s = [self.shopInfoData objectAtIndex:row];
     cell.title = s.title;
@@ -139,42 +141,40 @@
 //实现表示图的方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    //在点击单元格的时候跳转到详细页面但是现在这里点击无效
+        NSUInteger row = [indexPath row];
     
+        ShopInfoFKViewController *shopFKInfo = [[ShopInfoFKViewController alloc]initWithNibName:@"ShopInfoFKViewController" bundle:nil];
+        shopFKInfo.title = @"店铺详情";
+        shopFKInfo.shopInfoEntity = [self.shopInfoData objectAtIndex:row];
+    
+        [self.navigationController pushViewController:shopFKInfo animated:true];
 }
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
-    NSUInteger row = [indexPath row];
-//    NSString *rowValue = [[self.shopInfoData valueForKey:@"title"] objectAtIndex:row];
+//- (NSIndexPath *)tableView:(UITableView *)tv willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSUInteger row = [indexPath row];
 //    
-//    NSString *message = [[NSString alloc] initWithFormat:@"你选择的标题是%@",rowValue];
+//    ShopInfoFKViewController *shopFKInfo = [[ShopInfoFKViewController alloc]initWithNibName:@"ShopInfoFKViewController" bundle:nil];
+//    shopFKInfo.title = @"店铺详情";
+//    shopFKInfo.shopInfoEntity = [self.shopInfoData objectAtIndex:row];
 //    
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"标题选择"
-//                                                    message:message delegate:self
-//                                          cancelButtonTitle:@"OK"
-//                                          otherButtonTitles:nil, nil];
+//    [self.navigationController pushViewController:shopFKInfo animated:true];
 //    
-//    [alert show];
-//    [alert release];
-//    [message release];
-//    //实现点击时，让点击的那个选中慢慢消失
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    
-    ShopInfoFKViewController *shopFKInfo = [[ShopInfoFKViewController alloc]initWithNibName:@"ShopInfoFKViewController" bundle:nil];
-    shopFKInfo.title = @"店铺详情";
-    shopFKInfo.shopInfoEntity = [self.shopInfoData objectAtIndex:row];
-    
-    [self.navigationController pushViewController:shopFKInfo animated:true];
-}
+//    return nil;
+//}
+
+//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+//    NSUInteger row = [indexPath row];
+//    
+//    ShopInfoFKViewController *shopFKInfo = [[ShopInfoFKViewController alloc]initWithNibName:@"ShopInfoFKViewController" bundle:nil];
+//    shopFKInfo.title = @"店铺详情";
+//    shopFKInfo.shopInfoEntity = [self.shopInfoData objectAtIndex:row];
+//    
+//    [self.navigationController pushViewController:shopFKInfo animated:true];
+//}
 
 
 #pragma mark Table Delegate Methods
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0;
-}
-
-- (NSIndexPath *)tableView:(UITableView *)tableView
-  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
 }
 
 
