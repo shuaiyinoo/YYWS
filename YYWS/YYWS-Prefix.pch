@@ -13,8 +13,6 @@
     #import <Foundation/Foundation.h>
     #import "AppConfigure.h"
     #import "AppHelper.h"
-    #import "CalendarDateUtil.h"
-    #import "ITTDebug.h"
 #endif
 
 //导入一些常用的工具类

@@ -12,8 +12,8 @@
 #import "JSONKit.h"
 #import "PullingRefreshTableView.h"
 #import "ShopInfoEntity.h"
-#import "ITTBaseDataSourceImp.h"
 #import "ShopInfoFKViewController.h"
+#import "VRGViewController.h"
 
 @interface ShopInfoViewController ()
 
@@ -51,7 +51,13 @@
     self.shopinfoTableView.delegate = self;
     self.shopinfoTableView.allowsSelection = YES;
     [self.view addSubview:shopinfoTableView];
-    //初始化tableView
+    //时间长按事件
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLong:)];
+    longPress.minimumPressDuration = 0.8; //定义按的时间
+    [dataButton addGestureRecognizer:longPress];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,17 +88,6 @@
     //[dataTextField resignFirstResponder];
     //dataTextField.userInteractionEnabled = NO;
     self.shopInfoData = [[NSMutableArray alloc]init];
-    //初始化日历控件
-    _calendarView = [ITTCalendarView viewFromNib];
-    ITTBaseDataSourceImp *dataSource = [[ITTBaseDataSourceImp alloc] init];
-    _calendarView.date = [NSDate dateWithTimeIntervalSinceNow:2*24*60*60];
-    _calendarView.dataSource = dataSource;
-    _calendarView.delegate = self;
-    _calendarView.frame = CGRectMake(8, 40, 309, 410);
-    _calendarView.allowsMultipleSelection = TRUE;
-    [_calendarView showInView:self.view];
-    [_calendarView hide];
-    [dataSource release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -322,36 +317,28 @@
     [sender resignFirstResponder];
 }
 
-//下面是日历控件
-- (IBAction)showCalendar:(id)sender
-{
-    if (_calendarView.appear){
-        [_calendarView hide];
-    }else{
-        [_calendarView showInView:self.view];
-    }
+
+//显示日期选择控件
+- (IBAction)showCalendar:(id)sender{
+    VRGViewController *VRG = [[VRGViewController alloc] initWithNibName:@"VRGViewController" bundle:[NSBundle mainBundle]];
+    VRG.delegate = self;
+    //跳转界面
+    [self presentModalViewController:VRG animated:YES];
 }
-- (NSString*) stringFromFomate:(NSDate*) date formate:(NSString*)formate
+
+//协议回调
+//实现协议，在第一个窗口显示在第二个窗口输入的值，类似Android中的onActivityResult方法
+-(void)passValue:(NSString *)value
 {
-	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	[formatter setDateFormat:formate];
-	NSString *str = [formatter stringFromDate:date];
-	[formatter release];
-	return str;
+    [dataButton setTitle:value forState:UIControlStateNormal];
+    dataTextField.text = value;
 }
-- (void)calendarViewDidSelectDay:(ITTCalendarView*)calendarView calDay:(ITTCalDay*)calDay
-{
-    NSArray *selectedDates = calendarView.selectedDateArray;
-    if (calendarView.allowsMultipleSelection){
-        for (NSDate *date in selectedDates){
-            //NSLog(@"selected date %@", [self stringFromFomate:date formate:@"yyyy-MM-dd"]);
-            
-            //显示时间到控件上
-            [dataButton setTitle:[self stringFromFomate:date formate:@"yyyy-MM-dd"] forState:UIControlStateNormal];
-            dataTextField.text = [self stringFromFomate:date formate:@"yyyy-MM-dd"];
-        }
-    }else{
-        //ITTDINFO(@"selected date %@", [self stringFromFomate:calendarView.selectedDate formate:@"yyyy-MM-dd"]);
+
+
+-(void)btnLong:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
+        [dataButton setTitle:@"日期选择" forState:UIControlStateNormal];
+        dataTextField.text = @"";
     }
 }
 

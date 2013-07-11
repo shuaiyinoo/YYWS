@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ServiceHelper.h"
 #import "PullingRefreshTableView.h"
-#import "ITTCalendarView.h"
+#import "PassValueDelegate.h"
 
-@interface ShopInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,ServiceHelperDelegate,PullingRefreshTableViewDelegate,ITTCalendarViewDelegate>{
+@interface ShopInfoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,ServiceHelperDelegate,PullingRefreshTableViewDelegate,PassValueDelegate>{
     //请求登录对象
     ServiceHelper *helper;
-    //时间控件
-    ITTCalendarView *_calendarView;
 }
 
 @property (retain,nonatomic) PullingRefreshTableView *shopinfoTableView;

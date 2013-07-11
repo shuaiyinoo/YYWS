@@ -38,6 +38,9 @@
     shopInfoEntityCount.text = shopInfoEntity.count;
     
     [NSTimer scheduledTimerWithTimeInterval:1 target: self selector: @selector(handleTimer:)  userInfo:nil  repeats: YES];
+    //判断显示几张图片
+    
+    
     Arr=[[NSArray alloc]initWithObjects:
          [self strtoImgStr:shopInfoEntity.img1],
          [self strtoImgStr:shopInfoEntity.img2],
@@ -68,10 +71,10 @@
 
 
 
-#pragma mark - 5秒换图片
+#pragma mark - 7秒换图片
 - (void) handleTimer: (NSTimer *) timer
 {
-    if (TimeNum % 5 == 0 ){
+    if (TimeNum % 7 == 0 ){
         if (!Tend) {
             page.currentPage++;
             if (page.currentPage==page.numberOfPages-1) {
@@ -132,6 +135,8 @@ void UIImageFromURL( NSURL * URL, void (^imageBlock)(UIImage * image), void (^er
     //NSURL *theurl = [NSURL URLWithString:[Arr objectAtIndex:page.currentPage]];
     //[wb loadRequest:[NSURLRequest requestWithURL:theurl]];
     NSLog(@"被点击了");
+    
+    
 }
 
 #pragma mark - scrollView && page
