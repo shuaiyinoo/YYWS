@@ -23,7 +23,7 @@
 {
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     [defaults setBool:false forKey:@"isLogin"];
-    //    [defaults setBool:true forKey:@"isLogin"];
+    [defaults setBool:true forKey:@"isLogin"];
     [defaults synchronize];//用synchronize方法把数据持久化到standardUserDefaults数据库
     [super viewDidLoad];
 }

@@ -183,7 +183,8 @@
 #pragma mark loadDate
 -(IBAction)shopSerachButtonOnClick:(id)Sender{
     //从网络异步加载数据
-    [AppHelper showHUD:@"数据获取中"];//显示动画
+    //[AppHelper showHUD:@"数据获取中"];//显示动画
+    [MBHUDView hudWithBody:@"获取中" type:MBAlertViewHUDTypeCheckmark hidesAfter:3.0 show:YES];
     //归零页面
     self.page = 0;
     [self.shopInfoData removeAllObjects];
@@ -245,12 +246,19 @@
         [self.shopinfoTableView tableViewDidFinishedLoading];
         self.shopinfoTableView.reachedTheEnd  = NO;
         [self.shopinfoTableView reloadData];
+        
+        if(self.page-1 != 0){
+            //[AppHelper removeHUD];//移除动画
+        }
     }
-    [AppHelper removeHUD];//移除动画
+    
+
+    
 }
 -(void)finishFailRequest:(NSError*)error{
-    //NSLog(@"异步请发生失败:%@\n",[error description]);
-    [AppHelper removeHUD];//移除动画
+    if(self.page-1 != 0){
+        //[AppHelper removeHUD];//移除动画
+    }
     [MBHUDView hudWithBody:@"获取失败" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
 }
 
@@ -311,7 +319,7 @@
     NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SearchShopSituation"];
     [helper asynServiceMethod:@"SearchShopSituation" soapMessage:soapMsg];
     
-    [arr release];
+    //[arr release];
     
     self.page++;
 }

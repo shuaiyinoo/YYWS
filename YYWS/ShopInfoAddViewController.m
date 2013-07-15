@@ -377,7 +377,7 @@
                 //是否输入内容
                 if(![[countTextField text] isEqualToString:@""]){
                     //异步提交内容
-                    [AppHelper showHUD:@"数据获取中"];//显示动画
+                    //[AppHelper showHUD:@"数据获取中"];//显示动画
                     NSMutableArray *arr=[NSMutableArray array];
                     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"222059",@"mdbm", nil]];
                     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[titleTextField text],@"Title", nil]];
@@ -428,10 +428,10 @@
         
     }
     
-    [AppHelper removeHUD];//移除动画
+    //[AppHelper removeHUD];//移除动画
 }
 -(void)finishFailRequest:(NSError*)error{
-    [AppHelper removeHUD];//移除动画
+    //[AppHelper removeHUD];//移除动画
     [MBHUDView hudWithBody:@"获取失败" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
 }
 @end
