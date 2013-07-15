@@ -11,6 +11,7 @@
 #import "DIYTableViewController.h"
 #import "TabThreeViewController.h"
 #import "ShopInfoAddViewController.h"
+#import "ChronicleOfEvents.h"
 
 @interface DayWorkViewController ()
 
@@ -64,6 +65,17 @@
     //shopInfoadd.navigationItem.rightBarButtonItem = rightButton;
     
     [self.navigationController pushViewController:shopInfoadd animated:true];
+}
+
+-(IBAction)coeButtonOnClick:(id)Sender{
+    ChronicleOfEvents *coe = [[ChronicleOfEvents alloc]initWithNibName:@"ChronicleOfEvents" bundle:nil];
+    coe.title = @"大事记";
+    
+    [self.navigationController pushViewController:coe animated:true];
+    
+    //UIViewController *viewController3 = [[TabThreeViewController alloc] init];
+    //viewController3.title = @"店铺情况";
+    //[self.navigationController pushViewController:viewController3 animated:true];
 }
 
 @end
