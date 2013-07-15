@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074FE5331793A888008FD732 /* JKCustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 074FE5321793A888008FD732 /* JKCustomAlert.m */; };
 		711414F5178EA0C600042DD2 /* ShopInfoAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711414F3178EA0C600042DD2 /* ShopInfoAddViewController.m */; };
 		711414F6178EA0C600042DD2 /* ShopInfoAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711414F4178EA0C600042DD2 /* ShopInfoAddViewController.xib */; };
 		711414FB178EA7D200042DD2 /* jhztbg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 711414F8178EA7D200042DD2 /* jhztbg01.png */; };
@@ -149,6 +150,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074FE5311793A888008FD732 /* JKCustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCustomAlert.h; sourceTree = "<group>"; };
+		074FE5321793A888008FD732 /* JKCustomAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCustomAlert.m; sourceTree = "<group>"; };
 		711414F2178EA0C600042DD2 /* ShopInfoAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfoAddViewController.h; sourceTree = "<group>"; };
 		711414F3178EA0C600042DD2 /* ShopInfoAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfoAddViewController.m; sourceTree = "<group>"; };
 		711414F4178EA0C600042DD2 /* ShopInfoAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopInfoAddViewController.xib; sourceTree = "<group>"; };
@@ -713,6 +716,8 @@
 		71CF98E717840DD600D266A6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				074FE5311793A888008FD732 /* JKCustomAlert.h */,
+				074FE5321793A888008FD732 /* JKCustomAlert.m */,
 				71C3058B1783CFAB001A09AF /* AppDelegate.h */,
 				71C3058C1783CFAB001A09AF /* AppDelegate.m */,
 				71C305941783CFAB001A09AF /* ViewController.h */,
@@ -1180,6 +1185,7 @@
 				711C7BFE178FE08C0041FE3C /* MBCheckMarkView.m in Sources */,
 				711C7BFF178FE08C0041FE3C /* MBSpinningCircle.m in Sources */,
 				711C7C04178FE0A00041FE3C /* MBAlertViewItem.m in Sources */,
+				074FE5331793A888008FD732 /* JKCustomAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
