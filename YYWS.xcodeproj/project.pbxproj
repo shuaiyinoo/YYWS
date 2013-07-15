@@ -16,6 +16,7 @@
 		07BFB2571793B6C100FE623A /* ChronicleOfEvents.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFB2521793B6C100FE623A /* ChronicleOfEvents.xib */; };
 		07BFB2581793B6C100FE623A /* COEItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFB2541793B6C100FE623A /* COEItem.m */; };
 		07BFB2591793B6C100FE623A /* COEItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFB2551793B6C100FE623A /* COEItem.xib */; };
+		07BFB25B1793B7F700FE623A /* DayWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFB25A1793B7F700FE623A /* DayWorkViewController.xib */; };
 		711414F5178EA0C600042DD2 /* ShopInfoAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 711414F3178EA0C600042DD2 /* ShopInfoAddViewController.m */; };
 		711414F6178EA0C600042DD2 /* ShopInfoAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 711414F4178EA0C600042DD2 /* ShopInfoAddViewController.xib */; };
 		711414FB178EA7D200042DD2 /* jhztbg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 711414F8178EA7D200042DD2 /* jhztbg01.png */; };
@@ -106,7 +107,6 @@
 		71CF99121784184800D266A6 /* versionimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF99111784184800D266A6 /* versionimg.png */; };
 		71CF991417841B1900D266A6 /* bodybgs.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991317841B1900D266A6 /* bodybgs.png */; };
 		71CF991917841F7E00D266A6 /* DayWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF991717841F7E00D266A6 /* DayWorkViewController.m */; };
-		71CF991A17841F7E00D266A6 /* DayWorkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991817841F7E00D266A6 /* DayWorkViewController.xib */; };
 		71CF9922178420FF00D266A6 /* icon101.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991C178420FF00D266A6 /* icon101.png */; };
 		71CF9923178420FF00D266A6 /* icon102.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991D178420FF00D266A6 /* icon102.png */; };
 		71CF9924178420FF00D266A6 /* icon103.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CF991E178420FF00D266A6 /* icon103.png */; };
@@ -171,6 +171,7 @@
 		07BFB2531793B6C100FE623A /* COEItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COEItem.h; sourceTree = "<group>"; };
 		07BFB2541793B6C100FE623A /* COEItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COEItem.m; sourceTree = "<group>"; };
 		07BFB2551793B6C100FE623A /* COEItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = COEItem.xib; sourceTree = "<group>"; };
+		07BFB25A1793B7F700FE623A /* DayWorkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWorkViewController.xib; sourceTree = "<group>"; };
 		711414F2178EA0C600042DD2 /* ShopInfoAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfoAddViewController.h; sourceTree = "<group>"; };
 		711414F3178EA0C600042DD2 /* ShopInfoAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfoAddViewController.m; sourceTree = "<group>"; };
 		711414F4178EA0C600042DD2 /* ShopInfoAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopInfoAddViewController.xib; sourceTree = "<group>"; };
@@ -315,7 +316,6 @@
 		71CF991317841B1900D266A6 /* bodybgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bodybgs.png; sourceTree = "<group>"; };
 		71CF991617841F7E00D266A6 /* DayWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayWorkViewController.h; sourceTree = "<group>"; };
 		71CF991717841F7E00D266A6 /* DayWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayWorkViewController.m; sourceTree = "<group>"; };
-		71CF991817841F7E00D266A6 /* DayWorkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayWorkViewController.xib; sourceTree = "<group>"; };
 		71CF991C178420FF00D266A6 /* icon101.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon101.png; sourceTree = "<group>"; };
 		71CF991D178420FF00D266A6 /* icon102.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon102.png; sourceTree = "<group>"; };
 		71CF991E178420FF00D266A6 /* icon103.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon103.png; sourceTree = "<group>"; };
@@ -846,10 +846,10 @@
 		71CF991517841F6C00D266A6 /* DayWork */ = {
 			isa = PBXGroup;
 			children = (
+				07BFB25A1793B7F700FE623A /* DayWorkViewController.xib */,
 				07BFB24B1793ACB800FE623A /* ChronicleOfEvents */,
 				71CF991617841F7E00D266A6 /* DayWorkViewController.h */,
 				71CF991717841F7E00D266A6 /* DayWorkViewController.m */,
-				71CF991817841F7E00D266A6 /* DayWorkViewController.xib */,
 				71CF9928178506F400D266A6 /* ShopInfo */,
 			);
 			name = DayWork;
@@ -1116,7 +1116,6 @@
 				71CF990E1784149500D266A6 /* Readme_For_LvLei.txt in Resources */,
 				71CF99121784184800D266A6 /* versionimg.png in Resources */,
 				71CF991417841B1900D266A6 /* bodybgs.png in Resources */,
-				71CF991A17841F7E00D266A6 /* DayWorkViewController.xib in Resources */,
 				71CF9922178420FF00D266A6 /* icon101.png in Resources */,
 				71CF9923178420FF00D266A6 /* icon102.png in Resources */,
 				71CF9924178420FF00D266A6 /* icon103.png in Resources */,
@@ -1165,6 +1164,7 @@
 				07BFB24A1793AC2800FE623A /* boxbg.png in Resources */,
 				07BFB2571793B6C100FE623A /* ChronicleOfEvents.xib in Resources */,
 				07BFB2591793B6C100FE623A /* COEItem.xib in Resources */,
+				07BFB25B1793B7F700FE623A /* DayWorkViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
