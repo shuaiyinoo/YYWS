@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PassValueDelegate.h"
+#import "ServiceHelper.h"
 @class CustomAlertView;
 
-@interface ShopInfoAddViewController : UIViewController<PassValueDelegate>{
+@interface ShopInfoAddViewController : UIViewController<PassValueDelegate,ServiceHelperDelegate>{
     //跟拍摄有关的控件
     NSMutableArray *imageArray;
     IBOutlet UIView *flashView;
@@ -20,9 +21,14 @@
     BOOL singleMode;    //单张拍摄
     CustomAlertView *alertView;
     int morePhotoNumber;
+    //请求登录对象
+    ServiceHelper *helper;
 }
 
 @property (retain,nonatomic) IBOutlet UIButton *dataButton;
+@property (retain,nonatomic) IBOutlet UIButton *shopButton;
+@property (retain,nonatomic) IBOutlet UITextField *titleTextField;
+@property (retain,nonatomic) IBOutlet UITextField *countTextField;
 - (IBAction)showCalendar:(id)sender;
 
 

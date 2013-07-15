@@ -14,6 +14,7 @@
 #import "ShopInfoEntity.h"
 #import "ShopInfoFKViewController.h"
 #import "VRGViewController.h"
+#import "MBHUDView.h"
 
 @interface ShopInfoViewController ()
 
@@ -250,6 +251,7 @@
 -(void)finishFailRequest:(NSError*)error{
     //NSLog(@"异步请发生失败:%@\n",[error description]);
     [AppHelper removeHUD];//移除动画
+    [MBHUDView hudWithBody:@"获取失败" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
 }
 
 
@@ -308,6 +310,8 @@
     [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"0",@"GPSWD", nil]];
     NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"SearchShopSituation"];
     [helper asynServiceMethod:@"SearchShopSituation" soapMessage:soapMsg];
+    
+    [arr release];
     
     self.page++;
 }

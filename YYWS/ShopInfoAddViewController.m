@@ -11,6 +11,7 @@
 #import "UIButton+Badge.h"
 #import "CustomAlertView.h"
 #import "MBHUDView.h"
+#import "SoapHelper.h"
 
 #define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define GET_IMAGE(__NAME__,__TYPE__)    [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:__NAME__ ofType:__TYPE__]]
@@ -24,6 +25,9 @@
 @implementation ShopInfoAddViewController
 
 @synthesize dataButton;
+@synthesize shopButton;
+@synthesize titleTextField;
+@synthesize countTextField;
 @synthesize imagePickerController;
 
 
@@ -49,6 +53,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //数据加载完成后初始化Helper对象
+    helper=[[ServiceHelper alloc] initWithDelegate:self];
     
     imageArray = [[NSMutableArray alloc] init];
     morePhotoNumber = 0;
@@ -82,6 +88,7 @@
 }
 - (IBAction)takePhoto:(id)sender{
     singleMode = NO;
+    [imageArray removeAllObjects];//清空数组
     morePhotoNumber = 0;//重新计数
     UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
      if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
@@ -154,8 +161,9 @@
         [imageView release];
     }
     
+    
     //清空数组
-    [imageArray removeAllObjects];
+    //[imageArray removeAllObjects];
     [scrollView setContentOffset:CGPointZero];
 }
 
@@ -191,11 +199,13 @@
     }
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     //保存相片到数组，这种方法不可取,会占用过多内存
     //如果是一张就无所谓了，到时候自己改
     [imageArray addObject:[info objectForKey:UIImagePickerControllerOriginalImage]];
+    //把图片保存到沙盒中......
+    
+    
     if (singleMode) {
         [picker dismissModalViewControllerAnimated:YES];
         [self refreshImage];
@@ -346,5 +356,82 @@
         [controlView release];
         controlView = nil;
     }
+}
+
+
+//键盘放弃事件
+-(IBAction)textFiledReturnEditing:(id)sender {
+    [sender resignFirstResponder];
+}
+
+
+
+#pragma mark 上传数据
+-(IBAction)uploadShopInfo:(id)sender {
+    //判断用户是否选择门店
+    if(![[[shopButton titleLabel]text] isEqualToString:@"门店选择"]){
+        //判断用户是否选择日期
+        if(![[[dataButton titleLabel]text] isEqualToString:@"日期选择"]){
+            //是否输入标题
+            if(![[titleTextField text] isEqualToString:@""]){
+                //是否输入内容
+                if(![[countTextField text] isEqualToString:@""]){
+                    //异步提交内容
+                    [AppHelper showHUD:@"数据获取中"];//显示动画
+                    NSMutableArray *arr=[NSMutableArray array];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"222059",@"mdbm", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[titleTextField text],@"Title", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[countTextField text],@"content", nil]];
+                    
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"ErrImage", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"ErrImage2", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"ErrImage3", nil]];
+                    
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"Remark", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"常规商品照片",@"ErrImageType", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:[[dataButton titleLabel]text],@"date", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"8888",@"usercode", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"",@"txm", nil]];
+                    
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"0",@"GPSAddress", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"0",@"GPSJD", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"0",@"GPSWD", nil]];
+                    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"0",@"type", nil]];
+                    NSString *soapMsg=[SoapHelper arrayToDefaultSoapMessage:arr methodName:@"InsertShopSituation"];
+                    [helper asynServiceMethod:@"InsertShopSituation" soapMessage:soapMsg];
+                    
+                    [arr release];
+                    
+                    
+                }else{
+                    [MBHUDView hudWithBody:@"输入内容" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
+                }
+            }else{
+                [MBHUDView hudWithBody:@"输入标题" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
+            }
+        }else{
+            [MBHUDView hudWithBody:@"选择日期" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
+        }
+    }else{
+        [MBHUDView hudWithBody:@"选择门店" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
+    }
+}
+
+
+#pragma mark 异步请求结果
+-(void)finishSuccessRequest:(NSString*)xml{
+    //当查询出来的数据为空时说明没有数据
+    
+    if([xml isEqualToString:@"0"]){
+        
+    }else{
+        
+    }
+    
+    [AppHelper removeHUD];//移除动画
+}
+-(void)finishFailRequest:(NSError*)error{
+    [AppHelper removeHUD];//移除动画
+    [MBHUDView hudWithBody:@"获取失败" type:MBAlertViewHUDTypeExclamationMark hidesAfter:1.5 show:YES];
 }
 @end
